@@ -3,6 +3,78 @@ Theme Name:   El Abogado de Moda
 Description:  Tema hijo de Hello Elementor para El Abogado de Moda.
 Author:       Maktagg
 Template:     hello-elementor
-Version:      1.0.0
+Version:      1.1.0
 Text Domain:  elabogadodemoda
 */
+
+/* ==========================================================================
+   Guía de estilo: medidas de página (base Ventura), fluidas de 375 a 1320 px.
+   Colores y tipografías viven en el Kit de Elementor (Ajustes del sitio).
+   ========================================================================== */
+:root {
+	--eadm-gutter: clamp(20px, 15.24px + 1.270vw, 32px);
+	--eadm-section-y: clamp(64px, 51.30px + 3.386vw, 96px);
+	--eadm-gap: clamp(20px, 16.83px + 0.847vw, 28px);
+	--eadm-gap-lg: clamp(40px, 30.48px + 2.540vw, 64px);
+	--eadm-card-pad: clamp(24px, 20.83px + 0.847vw, 32px);
+}
+
+h1, h2, h3, h4, h5, h6,
+.elementor-heading-title {
+	text-wrap: balance;
+}
+
+/* Sección de primer nivel: margen lateral y aire vertical de la guía.
+   En Elementor: Contenedor > Avanzado > Clases CSS > eadm-seccion */
+.e-con.eadm-seccion {
+	--padding-top: var(--eadm-section-y);
+	--padding-bottom: var(--eadm-section-y);
+	--padding-left: var(--eadm-gutter);
+	--padding-right: var(--eadm-gutter);
+}
+
+/* Antetítulo con raya, p. ej. «EMPODERAMIENTO JURÍDICO» */
+.eadm-etiqueta .elementor-heading-title,
+.eadm-etiqueta {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.eadm-etiqueta .elementor-heading-title::before,
+.eadm-etiqueta:not(:has(.elementor-heading-title))::before {
+	content: "";
+	width: 2.5rem;
+	height: 1px;
+	background: currentColor;
+	flex: none;
+}
+
+/* Banda invertida (Artisteo, pie) */
+.e-con.eadm-banda-oscura {
+	--background-color: var(--e-global-color-primary);
+	color: var(--e-global-color-secondary);
+}
+.eadm-banda-oscura .elementor-heading-title {
+	color: var(--e-global-color-secondary);
+}
+.eadm-banda-oscura a {
+	color: var(--e-global-color-eadmazc);
+}
+
+/* Botón secundario de contorno: Botón > Avanzado > Clases CSS > eadm-btn-contorno */
+.eadm-btn-contorno .elementor-button {
+	background: transparent;
+	color: var(--e-global-color-primary);
+	border: 1px solid currentColor;
+}
+.eadm-btn-contorno .elementor-button:hover {
+	background: var(--e-global-color-primary);
+	color: var(--e-global-color-secondary);
+}
+.eadm-banda-oscura .eadm-btn-contorno .elementor-button {
+	color: var(--e-global-color-secondary);
+}
+.eadm-banda-oscura .eadm-btn-contorno .elementor-button:hover {
+	background: var(--e-global-color-secondary);
+	color: var(--e-global-color-primary);
+}
