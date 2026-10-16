@@ -1,0 +1,32 @@
+# El repo vive en app/public del sitio de Local: se ignora el núcleo de WordPress
+/*
+!/.gitignore
+!/.github/
+!/README.md
+!/wp-content/
+
+# Por defecto se ignora todo wp-content...
+/wp-content/*
+!/wp-content/themes/
+!/wp-content/plugins/
+!/wp-content/mu-plugins/
+
+# ...y dentro de themes/plugins solo se versiona lo nuestro
+/wp-content/themes/*
+!/wp-content/themes/elabogadodemoda*/
+/wp-content/plugins/*
+!/wp-content/plugins/elabogadodemoda-*/
+
+# Volcados de base de datos y backups
+*.sql
+*.sql.gz
+*.wpress
+/backups/
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+.env
